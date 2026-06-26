@@ -1,0 +1,5 @@
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="task" value="{{ task.title }}">
+    <button type="submit">Save</button>
+</form>

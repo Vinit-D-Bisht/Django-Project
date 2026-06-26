@@ -12,3 +12,17 @@ def home(request):
 
     task = Tasks.objects.all()
     return render(request, "home.html", {"tasks": task})
+
+def delete(request, id):
+    Tasks.objects.get(id=id).delete()
+    return redirect("/")
+
+def edit(request, id):
+    task = Tasks.objects.get(id=id)
+
+    if request.method == "POST":
+        task.title = request.POST["task"]
+        task.save()
+        return redirect("/")
+
+    return render(request, "edit.html", {"task": task})

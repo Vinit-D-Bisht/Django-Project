@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Simple TO-DO Django Project</title>
-	</head>
-	<body>
-		<h1>My TO-DO APP</h1>
-		<form method="POST">
-			{% csrf_token %}
-			<input type="text" placeholder="Enter Task" name="task"><br>
-			<button type="submit">Add item</button>	
-		</form>
-		<ul>
-			{% for t in tasks %}
-			<li>{{ t.title  }}</li>
-			{% endfor  %}
-		</ul>
-	</body>
+<head>
+    <title>Simple TO-DO Django Project</title>
+</head>
+<body>
+
+    <h1>My TO-DO APP</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="task" placeholder="Enter Task">
+        <button type="submit">Add Item</button>
+    </form>
+
+    <hr>
+
+    <ul>
+        {% for t in tasks %}
+        <li>
+            {{ t.title }}
+            <a href="/edit/{{ t.id }}/">Edit</a>
+            <a href="/delete/{{ t.id }}/">Delete</a>
+        </li>
+        {% empty %}
+        <li>No tasks available.</li>
+        {% endfor %}
+    </ul>
+
+</body>
 </html>
