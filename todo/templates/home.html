@@ -5,13 +5,15 @@
 	</head>
 	<body>
 		<h1>My TO-DO APP</h1>
-		<form>
-			<input type="text" placeholder="Enter Task"><br>
+		<form method="POST">
+			{% csrf_token %}
+			<input type="text" placeholder="Enter Task" name="task"><br>
 			<button type="submit">Add item</button>	
 		</form>
 		<ul>
-			<li>A</li>
-			<li>B</li>
+			{% for t in tasks %}
+			<li>{{ t.title  }}</li>
+			{% endfor  %}
 		</ul>
 	</body>
 </html>
