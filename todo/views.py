@@ -26,3 +26,9 @@ def edit(request, id):
         return redirect("/")
 
     return render(request, "edit.html", {"task": task})
+
+def status(request, id):
+    task = Tasks.objects.get(id=id)
+    task.status = not task.status
+    task.save()
+    return redirect("/")
