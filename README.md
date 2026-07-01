@@ -1,9 +1,9 @@
 # Django To-Do App
 
-A simple To-Do application.
+A To-Do application.
 
 ## Features
-
+- Authentication 
 - Add tasks
 - Edit tasks
 - Delete tasks
