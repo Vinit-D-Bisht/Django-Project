@@ -21,4 +21,4 @@ COPY . .
 EXPOSE 8000
 
 # Run Django using Gunicorn
-CMD ["sh", "-c", "python manage.py migrate && gunicorn YOUR_PROJECT_NAME.wsgi:application --bind 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn todo_project.wsgi:application --bind 0.0.0.0:8000"]
