@@ -29,5 +29,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/todo-project:v1.0
-            ${{ secrets.DOCKERHUB_USERNAME }}/todo-project:latest
+            vinitbisht/todo-project:v1.0
+            vinitbisht/todo-project:latest
