@@ -30,8 +30,8 @@ jobs:
         with:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/todo-project
           tags: |
+            type=raw,value=v1.0
             type=raw,value=latest
-            type=sha,format=long
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
